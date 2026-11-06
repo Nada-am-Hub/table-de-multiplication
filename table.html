@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <div class="table">
+        <h1>Table de multiplication</h1><br>
+        <form>
+            <input type="text" id="n1" placeholder="Saisir un entier"><br>
+
+        </form>
+        <button id="tab">Génerer</button>
+        <div id="result"></div>
+    </div>
+    <script>
+       
+        let a = document.getElementById('n1');
+        let b = document.getElementById('tab');
+
+        b.onclick = function () {
+        let n = Number(a.value);
+        let mul = "";
+
+        mul += "<table>";
+        mul += "<tr><th>Multiplication</th><th>Résultat</th></tr>";
+
+        for (let i = 1; i <= 10; i++) {
+            mul += `<tr>
+                        <td>${n} x ${i}</td>
+                        <td>${n * i}</td>
+                    </tr>`;
+        }
+
+        mul += "</table>";
+
+        document.getElementById("result").innerHTML = mul;
+    };
+</script>
+    </script>
+</body>
+</html>
